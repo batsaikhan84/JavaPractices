@@ -1,4 +1,4 @@
-package com.practices.SimpleCalculator;
+package com.practices.ConstructorPractices;
 
 public class SimpleCalculator {
     private double firstNumber;

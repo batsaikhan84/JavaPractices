@@ -1,4 +1,4 @@
-package com.practices.VipCustomer;
+package com.practices.ConstructorPractices;
 
 public class VipCustomer {
     private String name;

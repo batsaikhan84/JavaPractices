@@ -1,4 +1,4 @@
-package com.practices.Person;
+package com.practices.ConstructorPractices;
 
 public class Person {
     private String firstName;

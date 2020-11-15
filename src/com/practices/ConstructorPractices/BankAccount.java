@@ -1,4 +1,4 @@
-package com.practices.BankAccount;
+package com.practices.ConstructorPractices;
 
 import java.sql.SQLOutput;
 
