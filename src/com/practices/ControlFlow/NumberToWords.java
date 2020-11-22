@@ -2,16 +2,17 @@ package com.practices.ControlFlow;
 
 public class NumberToWords {
     public static void main(String[] args) {
-//        System.out.println(getDigitCount(0));
-//        System.out.println(reverse(123));
-        numberToWords(123954);
+//        System.out.println(getDigitCount(100));
+        System.out.println(reverse(-2));
+//        numberToWords(2012);
     }
     public static void numberToWords(int number) {
         if (number < 0) {
             System.out.println("Invalid Value");
         } else {
             int reverseNumber = reverse(number);
-            while (reverseNumber > 0) {
+            int digitCount = getDigitCount(number);
+            while ( digitCount> 0) {
                 int numberDigit = reverseNumber % 10;
                 switch (numberDigit) {
                     case 0:
@@ -44,15 +45,18 @@ public class NumberToWords {
                     case 9:
                         System.out.println("Nine");
                         break;
+                    default:
+                        System.out.println("Zero");
                 }
                 reverseNumber /= 10;
+                digitCount--;
             }
 
         }
     }
     public static int reverse(int number) {
         int reverseNumber = 0;
-        while (number > 0) {
+        while (number != 0) {
             int numberDigit = number % 10;
             reverseNumber = reverseNumber * 10 + numberDigit;
             number /= 10;
@@ -60,15 +64,17 @@ public class NumberToWords {
         return reverseNumber;
     }
     public static int getDigitCount(int number) {
-        int counter = 1;
+        int digitCount = 0;
         if (number < 0) {
             return -1;
+        } else if (number == 0){
+            return 1;
         } else {
-            while (number >= 10) {
-                counter++;
+            while (number > 0) {
+                digitCount++;
                 number /= 10;
             }
         }
-        return counter;
+        return digitCount;
     }
 }
