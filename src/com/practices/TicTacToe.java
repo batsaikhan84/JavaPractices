@@ -12,12 +12,13 @@ public class TicTacToe {
         System.out.println("Please enter number between 1 - 9");
         while (true) {
             int userInput = scanner.nextInt();
-            for (int i = 0; i < arrayXO.length; i++) {
-                if (userInput - 1 == i) {
-                    arrayXO[i] = "x";
-                }
+            if (arrayXO[userInput - 1] == " ") {
+                arrayXO[userInput - 1] = "x";
+                printingInput(arrayXO);
+            } else {
+                System.out.println("Please choose different number");
             }
-            printingInput(arrayXO);
+
         }
 
     }
