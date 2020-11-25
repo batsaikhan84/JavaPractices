@@ -37,4 +37,7 @@ public class TicTacToe {
         }
         return "x";
     }
+    public static void win(String[] arrayXO) {
+
+    }
 }
