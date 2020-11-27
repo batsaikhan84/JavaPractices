@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 public class TicTacToe {
     public static void main(String[] args) {
+        String[] arrayXO = {"x", "x", "o", "o", "o", " ", " ", " ", " "};
 //        String[] arrayXO = {" ", " ", " ", " ", " ", " ", " ", " ", " "};
 //        String currentPlayer = "x";
 //        Scanner scanner = new Scanner(System.in);
@@ -22,7 +23,7 @@ public class TicTacToe {
 //            }
 //
 //        }
-        winningCombinations();
+        System.out.println(winningCombinations(arrayXO));
     }
     public static void printingInput(String[] arrayXO) {
         System.out.println("|" + arrayXO[0] + "|" + arrayXO[1] + "|" + arrayXO[2] + "|");
@@ -41,13 +42,14 @@ public class TicTacToe {
         for (int i = 0; i < arrayXO.length; i++) {
         }
     }
-    public static void winningCombinations() {
+    public static String winningCombinations(String[] arrayXO) {
         int[][] winningCombo = {{0,1,2}, {3,4,5}, {6,7,8}, {0,3,6}, {1,4,7}, {2,5,8}, {0,4,8}, {2,4,6}};
+        String winner = " ";
         for (int i = 0; i < winningCombo.length; i++) {
-            for (int j = 0; j < winningCombo[i].length; j++) {
-
+            if (arrayXO[winningCombo[i][0]] == arrayXO[winningCombo[i][1]] && arrayXO[winningCombo[i][1]] == arrayXO[winningCombo[i][2]] && arrayXO[winningCombo[i][2]] != " ") {
+                winner = arrayXO[winningCombo[i][0]];
             }
-            System.out.println(Arrays.toString(winningCombo[i]));
         }
+        return winner;
     }
 }
